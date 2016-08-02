@@ -1,8 +1,7 @@
 #include <iostream>
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 #include <vector>
+#include <random>
+#include <fstream>
 
 class SortingHandler
 {
@@ -18,8 +17,16 @@ class SortingHandler
 //Method for generating a random number for testing the sorting algorithms.
 int SortingHandler::generateRandInt(int min, int max)
 {
-	srand( time(NULL) );//Looks like, at least on my desktop, time(NULL) is always giving the same value within the loop (which makes sense if it's in seconds), so probably want to find something else.
-	return rand() % (max - min) + min;
+	std::ifstream randfile("/dev/urandom");
+	unsigned int seed = 0;
+	if( randfile.is_open() )
+	{
+		randfile.read( reinterpret_cast<char*>(&seed), sizeof(seed) );
+	}
+	randfile.close();
+	std::default_random_engine dre(seed);
+	std::uniform_int_distribution<int> di(min, max);
+	return di(dre);
 }
 
 //Method for generating a set of random numbers for testing the sorting algorithms.

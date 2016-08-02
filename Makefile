@@ -1,7 +1,7 @@
 all: MainTest
 
-Test: MainTest.cpp
-	g++ -Wall -o MainTest MainTest.cpp
+MainTest: MainTest.cpp
+	g++ -std=c++11 -Wall -o MainTest MainTest.cpp
 
 clean:
 	if [ -e MainTest ]; then rm MainTest; fi;
