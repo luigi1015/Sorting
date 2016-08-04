@@ -2,6 +2,7 @@
 
 template <class T> bool AbstractSort::less( T first, T second )
 {
+	return first < second;
 }
 
 template <class T> void AbstractSort::exch( std::vector<T> list, int first, int second )
