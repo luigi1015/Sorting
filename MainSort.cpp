@@ -7,6 +7,9 @@ template <class T> bool AbstractSort::less( T first, T second )
 
 template <class T> void AbstractSort::exch( std::vector<T> list, int first, int second )
 {
+	T temp = list[first];
+	list[first] = list[second];
+	list[second] = temp;
 }
 
 template <class T> void AbstractSort::show( std::vector<T> list )
