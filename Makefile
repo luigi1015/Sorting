@@ -1,7 +1,7 @@
 all: SelectionSort.o SortingHandler
 
-SortingHandler: SortingHandler.cpp SelectionSort.o
-	g++ -std=c++11 -Wall -o SortingHandler SortingHandler.cpp
+SortingHandler: SortingHandler.cpp SelectionSort.cpp
+	g++ -std=c++11 -Wall -o SortingHandler SortingHandler.cpp SelectionSort.cpp
 
 SelectionSort.o: SelectionSort.cpp
 	g++ -std=c++11 -Wall -c -o SelectionSort.o SelectionSort.cpp

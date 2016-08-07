@@ -30,7 +30,7 @@ template <class T> class SelectionSort
 	protected:
 
 	public:
-		std::vector<T> sort( std::vector<T> &list )
+		static std::vector<T> sort( std::vector<T> &list )
 		{
 			int length = list.size();
 			for( int i = 0; i < length; i++ )
@@ -55,7 +55,7 @@ template <class T> class SelectionSort
 				return false;
 			}
 
-			for( int i = 1; i < list.size(); i++ )
+			for( unsigned int i = 1; i < list.size(); i++ )
 			{
 				if( less(list[i], list[i-1]) )
 				{

@@ -45,14 +45,29 @@ std::vector<int> SortingHandler::generateRandInts(int num, int min, int max)
 	return randomInts;
 }
 
+void printVector( std::vector<int> vectorToPrint )
+{
+	for( std::vector<int>::iterator vectorIterator = vectorToPrint.begin(); vectorIterator != vectorToPrint.end(); vectorIterator++ )
+	{
+		std::cout << ' ' << *vectorIterator;
+	}
+	std::cout << std::endl;
+}
+
 int main( int argc, char *argv[] )
 {
 	SortingHandler sh;
 	std::vector<int> randInts = sh.generateRandInts(10, 0, 100 );
-	for( std::vector<int>::iterator randIntsIterator = randInts.begin(); randIntsIterator != randInts.end(); randIntsIterator++ )
+	printVector( randInts );
+	SelectionSort<int>::sort( randInts );
+	printVector( randInts );
+	if( SelectionSort<int>::isSorted( randInts ) == true )
 	{
-		std::cout << ' ' << *randIntsIterator;
+		std::cout << "Sorted" << std::endl;
 	}
-	std::cout << std::endl;
+	else
+	{
+		std::cout << "Not Sorted" << std::endl;
+	}
 	return 0;
 }
