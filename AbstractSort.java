@@ -12,7 +12,7 @@ public abstract class AbstractSort<T extends Comparable<T>>
 	 * @param second The second value to compare.
 	 * @return True if first < second, false if first >= second.
 	 */
-	private boolean less( T first, T second )
+	protected boolean less( T first, T second )
 	{
 		return first.compareTo(second) < 0;
 	}
@@ -24,7 +24,7 @@ public abstract class AbstractSort<T extends Comparable<T>>
 	 * @param first The index of one value to exchage.
 	 * @param second The index of the other value to exchage.
 	 */
-	private void exch( List<T> list, int first, int second )
+	protected void exch( List<T> list, int first, int second )
 	{
 		T temp = list.get( first );
 		list.set( first, list.get(second) );
@@ -36,7 +36,7 @@ public abstract class AbstractSort<T extends Comparable<T>>
 	 *
 	 * @param list The list of values to print.
 	 */
-	private void show( List<T> list )
+	protected void show( List<T> list )
 	{
 		for( int i = 0; i < list.size(); i++ )
 		{
@@ -59,7 +59,7 @@ public abstract class AbstractSort<T extends Comparable<T>>
 	 * @param list The list to check.
 	 * @return True if list, false if list isn't sorted.
 	 */
-	public boolean isSorted( List<T> list )
+	protected boolean isSorted( List<T> list )
 	{
 		if( list.size() == 0 )
 		{
