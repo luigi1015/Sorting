@@ -9,6 +9,11 @@
 
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'eclipse'
+
+version = '0.1'
+mainClassName = 'SelectionSort'
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -28,3 +33,20 @@ dependencies {
     // 'test.useTestNG()' to your build script.
     testCompile 'junit:junit:4.12'
 }
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Sorting',
+            'Implementation-Version': version,
+            'Main-Class': mainClassName
+    }
+}
+
+uploadArchives {
+    repositories {
+       flatDir {
+           dirs 'JAR'
+       }
+    }
+}
+
