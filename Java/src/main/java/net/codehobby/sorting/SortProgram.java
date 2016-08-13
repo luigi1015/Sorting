@@ -1,41 +1,12 @@
+package net.codehobby.sorting;
+
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Random;
 import java.lang.Integer;
 
-public class SelectionSort<T extends Comparable<T>> extends AbstractSort<T>
+public class SortProgram
 {
-	/**
-	 * Sorts the given list using selection sort.
-	 *
-	 * @param list The list to sort.
-	 * @return The sorted list.
-	 */
-	public List<T> sort( List<T> list )
-	{
-		int length = list.size();
-		for( int i = 0; i < length; i++ )
-		{
-			int min = i;
-			for( int j = i+1; j < length; j++ )
-			{
-				if( less(list.get(j), list.get(min)) )
-				{
-					min = j;
-				}
-			}
-			exch( list, i, min );
-		}
-		return list;
-	}
-
-	/**
-	 * Constructor.
-	 */
-	public SelectionSort()
-	{
-	}
-
 	/**
 	 * Main method. Generates some random values and runs the sort.
 	 *
@@ -43,12 +14,16 @@ public class SelectionSort<T extends Comparable<T>> extends AbstractSort<T>
 	 */
 	public static void main( String[] args )
 	{
-		SelectionSort<Integer> selectionSort = new SelectionSort();
-		List<Integer> randomInts = generateRandomInts( 10 );
+		//Selection Sort
+		System.out.println( "Selection Sort:" );
+		AbstractSort<Integer> selectionSort = new SelectionSort();
+		List<Integer> randomInts = PseudoRandom.generateRandomInts( 10 );
+		System.out.println( "Random integers:" );
 		selectionSort.show( randomInts );
 		selectionSort.sort( randomInts );
+		System.out.println();
+		System.out.println( "Sorted Integers:" );
 		selectionSort.show( randomInts );
-		//System.out.println( hw.getTextToDisplay() );
 	}
 
 	/**

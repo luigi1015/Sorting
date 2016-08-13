@@ -13,7 +13,7 @@ apply plugin: 'application'
 apply plugin: 'eclipse'
 
 version = '0.1'
-mainClassName = 'SelectionSort'
+mainClassName = 'net.codehobby.sorting.SortProgram'
 
 // In this section you declare where to find the dependencies of your project
 repositories {
