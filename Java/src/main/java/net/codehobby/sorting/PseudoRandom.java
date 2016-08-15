@@ -7,17 +7,66 @@ import java.lang.Integer;
 
 public class PseudoRandom
 {
+	private int maxVal = 100;//Maximum value to generate.
+	private Random rnd;
+
 	/**
-	 * Generates an ArrayList of pseudorandom integers.
-	 * 
-	 * @param num The number of integers to generate.
-	 * @return An ArrayList with num pseudorandom integers in it.
+	 * Constructor, seeds the random number generator.
 	 */
-	public static List<Integer> generateRandomInts( int num )
+	public PseudoRandom()
 	{
-		int maxVal = 100;//Maximum value to generate.
+		rnd = new Random( java.lang.System.currentTimeMillis() );
+	}
+
+	/**
+	 * Constructor, seeds the random number generator and sets the maximum value.
+	 * 
+	 * @param newMaxVal The maximum value of the random values.
+	 */
+	public PseudoRandom( int newMaxVal )
+	{
+		rnd = new Random( java.lang.System.currentTimeMillis() );
+		maxVal = newMaxVal;
+	}
+
+	/**
+	 * Getter method for the maximum value.
+	 * 
+	 * @return The maximum value of the random values.
+	 */
+	public int setMaxVal()
+	{
+		return maxVal;
+	}
+
+	/**
+	 * Setter method for the maximum value.
+	 * 
+	 * @param newMaxVal The maximum value of the random values.
+	 */
+	public void setMaxVal( int newMaxVal )
+	{
+		maxVal = newMaxVal;
+	}
+
+	/**
+	 * Seeds rnd;
+	 */
+	public void seed()
+	{
+		rnd = new Random( java.lang.System.currentTimeMillis() );
+	}
+
+	/**
+	 * Generates an ArrayList of pseudorandom Integers.
+	 * 
+	 * @param num The number of Integers to generate.
+	 * @return An ArrayList with num pseudorandom Integers in it.
+	 */
+	public List<Integer> generateRandomInts( int num )
+	{
 		List<Integer> randomInts = new ArrayList<Integer>();
-		Random rnd = new Random( java.lang.System.currentTimeMillis() );
+		seed();
 		for( int i = 0; i < num; i++ )
 		{
 			randomInts.add( rnd.nextInt(maxVal) );
