@@ -26,7 +26,7 @@ public class PseudoRandom
 	public PseudoRandom( int newMaxVal )
 	{
 		rnd = new Random( java.lang.System.currentTimeMillis() );
-		maxVal = newMaxVal;
+		setMaxVal( newMaxVal );
 	}
 
 	/**
@@ -34,7 +34,7 @@ public class PseudoRandom
 	 * 
 	 * @return The maximum value of the random values.
 	 */
-	public int setMaxVal()
+	public int getMaxVal()
 	{
 		return maxVal;
 	}
