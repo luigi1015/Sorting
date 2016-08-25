@@ -15,7 +15,8 @@ public class PseudoRandom
 	 */
 	public PseudoRandom()
 	{
-		rnd = new Random( java.lang.System.currentTimeMillis() );
+		//rnd = new Random( java.lang.System.currentTimeMillis() );
+		seed();
 	}
 
 	/**
@@ -25,7 +26,8 @@ public class PseudoRandom
 	 */
 	public PseudoRandom( int newMaxVal )
 	{
-		rnd = new Random( java.lang.System.currentTimeMillis() );
+		//rnd = new Random( java.lang.System.currentTimeMillis() );
+		seed();
 		setMaxVal( newMaxVal );
 	}
 
