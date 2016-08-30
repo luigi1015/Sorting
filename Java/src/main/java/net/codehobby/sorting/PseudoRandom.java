@@ -82,10 +82,10 @@ public class PseudoRandom
 	public <E> void shuffleArray( E[] arrayToShuffle )
 	{
 		seed();
-		for( int i = 0; i  < arrayToShuffle.length - 1; i++ )
+		for( int i = 0; i  < arrayToShuffle.length; i++ )
 		{
 			//Get the pseudorandom index to switch with index i.
-			int index = rnd.nextInt( i + 1);
+			int index = rnd.nextInt( i == 0 ? 1 : i );
 
 			//Do the switch.
 			E temp = arrayToShuffle[index];
