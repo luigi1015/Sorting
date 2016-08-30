@@ -15,7 +15,6 @@ public class PseudoRandom
 	 */
 	public PseudoRandom()
 	{
-		//rnd = new Random( java.lang.System.currentTimeMillis() );
 		seed();
 	}
 
@@ -26,7 +25,6 @@ public class PseudoRandom
 	 */
 	public PseudoRandom( int newMaxVal )
 	{
-		//rnd = new Random( java.lang.System.currentTimeMillis() );
 		seed();
 		setMaxVal( newMaxVal );
 	}
@@ -52,7 +50,7 @@ public class PseudoRandom
 	}
 
 	/**
-	 * Seeds rnd;
+	 * Seeds rnd.
 	 */
 	public void seed()
 	{
@@ -74,5 +72,25 @@ public class PseudoRandom
 			randomInts.add( rnd.nextInt(maxVal) );
 		}
 		return randomInts;
+	}
+
+	/**
+	 * Pseudorandomly shuffles an array of generic type.
+	 * 
+	 * @param arrayToShuffle The array to pseudorandomly shuffle.
+	 */
+	public <E> void shuffleArray( E[] arrayToShuffle )
+	{
+		seed();
+		for( int i = 0; i  < arrayToShuffle.length - 1; i++ )
+		{
+			//Get the pseudorandom index to switch with index i.
+			int index = rnd.nextInt( i + 1);
+
+			//Do the switch.
+			E temp = arrayToShuffle[index];
+			arrayToShuffle[index] = arrayToShuffle[i];
+			arrayToShuffle[i] = temp;
+		}
 	}
 }
