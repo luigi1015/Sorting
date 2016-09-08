@@ -7,6 +7,14 @@ import java.lang.Integer;
 
 public class QuickSort<T extends Comparable<T>> extends AbstractSort<T>
 {
+
+	/**
+	 * Constructor.
+	 */
+	public QuickSort()
+	{
+	}
+
 	/**
 	 * Sorts the given list using selection sort.
 	 *
@@ -17,10 +25,7 @@ public class QuickSort<T extends Comparable<T>> extends AbstractSort<T>
 	{
 	}
 
-	/**
-	 * Constructor.
-	 */
-	public QuickSort()
+	public int partition( List<T> list, int low, int high )
 	{
 	}
 }
