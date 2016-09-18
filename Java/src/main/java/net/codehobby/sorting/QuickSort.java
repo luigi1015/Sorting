@@ -27,5 +27,8 @@ public class QuickSort<T extends Comparable<T>> extends AbstractSort<T>
 
 	public int partition( List<T> list, int low, int high )
 	{
+		int i = low;
+		int j = high + 1;
+		T v = list.get( low );
 	}
 }
